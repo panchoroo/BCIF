@@ -2,15 +2,29 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:700%7CDroid+Sans);
 
 /* 2017 colors : */
-body {
+/* body {
 	--primary-color: #fa5e79;
 	--secondary-color: #4e9897;
 	--navbar-color: #72a0be;
 	--active-navbar-color: #2c3c47;
 	--tertiary-color: #fae2b9;
 	--hover-color: #ff9e00;
-}
+} */
+
 /* 2018 colors : */
+body {
+	--primary-color: #cd4b00;
+	/* --primary-color: #ff9e00; */
+	--secondary-color: #d69b09;
+	/* --navbar-color: #ff9e00; */
+	/* --navbar-color: #b93e01; */
+	--navbar-color: #cd4b00;
+	--active-navbar-color: #ffeb00;
+	/* --active-navbar-color: #d69b09; */
+	--tertiary-color: #fae2b9;
+	/* --hover-color: #ffeb00; */
+	--hover-color: #ff7b00;
+}
 /* div.amie {
 	color: #cd4b00;
 	color: #fa5e79;
@@ -30,7 +44,7 @@ body {
 
 .nav.navbar-nav.navbar-right > .active a{
 	background-color: var(--active-navbar-color);
-	color: white;
+	/* color: white; */
 }
 
 .navbar.navbar-inverse.navbar-fixed-top a{
