@@ -14,23 +14,13 @@
 /* 2018 colors : */
 body {
 	--primary-color: #cd4b00;
-	/* --primary-color: #ff9e00; */
 	--secondary-color: #d69b09;
-	/* --navbar-color: #ff9e00; */
-	/* --navbar-color: #b93e01; */
 	--navbar-color: #cd4b00;
 	--active-navbar-color: #ffeb00;
-	/* --active-navbar-color: #d69b09; */
 	--tertiary-color: #fae2b9;
-	/* --hover-color: #ffeb00; */
 	--hover-color: #ff7b00;
 }
-/* div.amie {
-	color: #cd4b00;
-	color: #fa5e79;
-	color: #d69b09;
-	color: #ffeb00;
-} */
+
 
 /* Navbar styles */
 .navbar-text > a {
@@ -60,6 +50,7 @@ body {
 /* Footer styles */
 /* footer text color */
 .navbar-text a { color: white; }
+
 .navbar.navbar-inverse.footer a:hover {
 	/* footer links hover color */
 	color: var(--primary-color) !important;
@@ -81,7 +72,7 @@ body {
 }
 
 
-/* <!------------ MODAL ------------> */
+/* <!------------ MODAL styles ------------> */
 .troupeInfo > .modal-title > h1 {
 	padding-top: 20px;
 	background-color: #ccc;
@@ -117,7 +108,7 @@ body {
 }
 
 
-/* <!------------ HOMEPAGE TIERS ------------> */
+/* <!------------ HOMEPAGE TIERS styles ------------> */
 ul.tier1 { padding:0; margin:0; }
 ul.tier3 { padding:0; margin:0; }
 ul.tier2 { padding:0; margin:0; }
