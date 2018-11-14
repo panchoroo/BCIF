@@ -1,0 +1,87 @@
+Original version:
+
+function generateTroupeModals() {
+  doc = DocumentApp.create('generatedTroupeModals');
+  doc2 = DocumentApp.create('generatedModalLinks');
+  doc3 = DocumentApp.create('generatedHomepageLinks');
+
+  var sheet = SpreadsheetApp.getActiveSheet();
+  const numRows = 105;
+  const startRow = 3;  // First row of data to process
+  const startCol = 5;
+  const numCols = 5;
+  
+  // Name of Improv Troupe    [ Column E ]  { troupeName : formatted, Title Case? }
+  // Home City                [ Column F ]  { troupeCity : formatted, Title Case? } 
+  // Troupe Bio               [ Column H ]  { troupeBio  : formatted, multiple p's? }
+  // Troupe Members           [ Column I ]  { troupeCast : formatted, Title Case?, remove commas, add <br> in between? ex: Paige Fockler<br>Elizabeth Reichel }
+  // troupe ID                              { troupeID   : take v_troupeName, lowercase() and remove spaces }
+  // Fetch the range of cells E2:H3 ?
+  
+  var dataRange = sheet.getRange(startRow, startCol, numRows, numCols)  
+  var data = dataRange.getValues();
+
+  var rowNum = 0;
+  while (rowNum < numRows) {
+    var troupeName = 'ToDo';
+    var troupeBio = 'ToDo';
+    var troupeCast = 'ToDo';
+    var troupeCity = 'ToDo';
+    var troupeID = 'ToDo';
+    var troupeImg = 'ToDo';
+    
+    var currentRow = data[rowNum];
+    troupeName = currentRow[0]
+    troupeCity = currentRow[1];
+    troupeBio = currentRow[3];
+    troupeCast = currentRow[4];
+    
+    troupeID = troupeName.toLowerCase().split(' ').join('').split('!').join('').split("’").join('').split(';').join(',').split(':').join('').split('&').join('').split('"').join('').split("'").join('');
+    troupeImg = troupeName.toLowerCase().split(' ').join('_');
+       
+    // format troupeCity
+    // don't really need this because it's all caps
+    if (troupeCity.toLowerCase().split(',')[0] == 'toronto') {
+      troupeCity = 'Toronto';
+    } else if (troupeCity == troupeCity.toLowerCase()) {
+      var cityLowerCase = troupeCity.split(' ');
+      for (var cityWordNum=0; cityWordNum < cityLowerCase.length; cityWordNum++) {
+        cityWordUpper = cityLowerCase[cityWordNum];
+        cityLowerCase[cityWordNum] = cityWordUpper[0].toUpperCase()+cityWordUpper.slice(1);
+      }
+      troupeCity = cityLowerCase.join(' ');
+    }
+    
+    // format troupeBio
+    troupeBio = troupeBio.split('\n').join('<br>');
+    
+    // format troupeCast
+    troupeCast = troupeCast.split('and ').join(',');
+    troupeCast = troupeCast.split('& ').join(',');
+    if (troupeCast.split(',').length > 1) {
+      troupeCast = troupeCast.split(',').join('<br>');
+    } else if (troupeCast.split('\n').length > 1) {
+      troupeCast = troupeCast.split('\n').join('<br>');
+    } else {
+      troupeCast = troupeCast.split(' ');
+      newCast = []
+      for (var nameNum=0; nameNum < troupeCast.length; nameNum+=2) {
+        name = troupeCast[nameNum]+' '+troupeCast[nameNum+1];
+        newCast.push(name);
+      }
+      troupCast = newCast.join('<br>');
+    }
+      var troupeModal = "<!-- Troupe --><div class='modal fade' tabindex='-1'role='dialog' id='"+troupeID+"'><div class='modal-dialog'><div class='modal-content'><div class='row'><div class='col-lg-6'><img class='img-responsive' src='../troupes/"+troupeImg+".jpg'></div><div class='col-lg-6'> <div class='troupeInfo'><h1 class='modal-title'>"+troupeName+"</h1><h6>"+troupeCity+"</h6> <p class='cast'>"+troupeCast+"</p><p class='bio'>"+troupeBio+"</p></div></div></div><div class='modal-footer'><a class='btn btn-default' data-dismiss='modal'>Close</a></div> </div> </div></div> <!-- END troupe -->"
+      var modalLink = "<a href='#"+troupeID+"' data-toggle='modal' class='list-group-item'>"+troupeName+"</a>"
+      var homepageLink = "<li><a href='#"+troupeID+"' data-toggle='modal'>"+troupeName+"</a></li>"
+      
+      var par = doc.insertParagraph(rowNum, troupeModal);
+      var par2 = doc2.insertParagraph(rowNum, modalLink);
+      var par3 = doc3.insertParagraph(rowNum, homepageLink);
+    
+    
+    // <a href="#weekend_cottage" data-toggle="modal" class="list-group-item">Weekend at the Cottage</a>
+      
+    rowNum++;
+  }
+}

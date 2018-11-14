@@ -239,11 +239,11 @@ td > input {
 }
 
 /* schedule styles */
-a.list-group-item-info, button.list-group-item-info {
+a.list-group-item-info, button.list-group-item-info, h2.workshops {
 	color: var(--secondary-color);
 	background-color: #4D4D4D;
 }
-a.list-group-item-info:hover, a.list-group-item-info:focus {
+a.list-group-item-info:hover, a.list-group-item-info:focus, h3.workshops {
 	color: #4D4D4D;
 	background-color: var(--secondary-color);
 }
@@ -266,4 +266,9 @@ a.list-group-item-info:hover, a.list-group-item-info:focus {
     color: white;
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* workshops styles */
+h3.workshops{
+	margin-top: 0;
 }
