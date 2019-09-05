@@ -2,27 +2,16 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:700%7CDroid+Sans);
 
 /* 2017 colors : */
-body {
+/* body {
 	--primary-color: #fa5e79;
 	--secondary-color: #4e9897;
 	--navbar-color: #72a0be;
 	--active-navbar-color: #2c3c47;
 	--tertiary-color: #fae2b9;
 	--hover-color: #ff9e00;
-}
-/* 2018 colors : */
-/* div.amie {
-	color: #cd4b00;
-	color: #fa5e79;
-	color: #d69b09;
-	color: #ffeb00;
 } */
 
-.navbar-text > a {
-	color: inherit;
-	text-decoration: none;
-}
-
+/* 2018 colors : */
 body {
 	--primary-color: #cd4b00;
 	--secondary-color: #d69b09;
@@ -31,25 +20,7 @@ body {
 	--tertiary-color: #fae2b9;
 	--hover-color: #ff7b00;
 }
-p {
-	font-family: 'Droid Sans', sans-serif;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Amatic SC', serif;
-}
 
-h1 { color: #fa5e79; padding-top: 10px; }
-
-
-.navbar.navbar-inverse.footer a:hover {
-	color: #fa5e79 !important;
-}
-h4 { font-size: 24px;}
-h4, h5 { color: #fa5e79;}
-h6 { font-size: 18px;}
-.header {
-	background-color: white;
-}
 
 /* Navbar styles */
 .navbar-text > a {
@@ -57,18 +28,20 @@ h6 { font-size: 18px;}
 	text-decoration: none;
 }
 .navbar.navbar-inverse.navbar-fixed-top  {
-	background-color: var(--navbar-color); 
+	/* background-color: var(--navbar-color);  */
+	background-color: #4D4D4D; 
 	border: none;
 }
 
 .nav.navbar-nav.navbar-right > .active a{
-	background-color: var(--active-navbar-color);
+	/* background-color: var(--active-navbar-color); */
+	background-color:  #743502;
 	color: white;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top a{
 	color: var(--tertiary-color);
-	color: black;
+	color: white;
 }
 
 .navbar-text.pull-left {
@@ -79,6 +52,7 @@ h6 { font-size: 18px;}
 /* Footer styles */
 /* footer text color */
 .navbar-text a { color: white; }
+
 .navbar.navbar-inverse.footer a:hover {
 	/* footer links hover color */
 	color: var(--primary-color) !important;
@@ -88,6 +62,9 @@ h6 { font-size: 18px;}
 	margin-top: 40px;
 	padding-bottom: 100px;
 	background-color: #4D4D4D;
+}
+
+
 
 .active { 
 	background-color: var(--secondary-color) !important;
@@ -95,7 +72,6 @@ h6 { font-size: 18px;}
 .background {
 	background-color: var(--secondary-color) !important;
 }
-
 
 
 /* <!------------ MODAL styles ------------> */
@@ -134,14 +110,7 @@ h6 { font-size: 18px;}
 }
 
 
-.list-group-item-info {
-	background-color: #bce8e6;
-}
-.btn-info {
-	background-color: #fa5e79;
-}
-
-/* <!------------ HOMEPAGE TIERS ------------> */
+/* <!------------ HOMEPAGE TIERS styles ------------> */
 ul.tier1 { padding:0; margin:0; }
 ul.tier3 { padding:0; margin:0; }
 ul.tier2 { padding:0; margin:0; }
@@ -160,6 +129,8 @@ ul.tier1 li a:visited {color:var(--primary-color);}
 ul.tier1 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier1 li a:hover { color:var(--hover-color); }
 ul.tier1 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier1 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier2 li {
 	font-family: 'Amatic SC', serif;
@@ -169,12 +140,15 @@ ul.tier2 li {
 	margin: 8px;
 }
 
+
 ul.tier2 li a:link { color:var(--primary-color); }
 ul.tier2 li:nth-child(odd) a:link { color:var(--secondary-color); }
 ul.tier2 li a:visited {color:var(--primary-color);}
 ul.tier2 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier2 li a:hover { color:var(--hover-color); }
 ul.tier2 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier2 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier3 li {
 	font-family: 'Amatic SC', serif;
@@ -189,6 +163,8 @@ ul.tier3 li a:visited {color:var(--primary-color);}
 ul.tier3 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier3 li a:hover { color:var(--hover-color); }
 ul.tier3 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier3 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier4 li {
 	font-family: 'Amatic SC', sans-serif;
@@ -203,6 +179,8 @@ ul.tier4 li a:visited {color:var(--primary-color);}
 ul.tier4 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier4 li a:hover { color:var(--hover-color); }
 ul.tier4 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier4 li a:focus { outline-color: var(--hover-color); }
+
 
 /* general styles */
 
@@ -234,6 +212,7 @@ h6 { font-size: 18px;}
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 18px;
 }
+
 
 table {
 	display: flex;
