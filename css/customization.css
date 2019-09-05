@@ -11,7 +11,6 @@
 	--hover-color: #ff9e00;
 } */
 
-
 /* 2018 colors : */
 body {
 	--primary-color: #cd4b00;
@@ -29,18 +28,20 @@ body {
 	text-decoration: none;
 }
 .navbar.navbar-inverse.navbar-fixed-top  {
-	background-color: var(--navbar-color); 
+	/* background-color: var(--navbar-color);  */
+	background-color: #4D4D4D; 
 	border: none;
 }
 
 .nav.navbar-nav.navbar-right > .active a{
-	background-color: var(--active-navbar-color);
-	/* color: white; */
+	/* background-color: var(--active-navbar-color); */
+	background-color:  #743502;
+	color: white;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top a{
 	color: var(--tertiary-color);
-	color: black;
+	color: white;
 }
 
 .navbar-text.pull-left {
@@ -128,6 +129,8 @@ ul.tier1 li a:visited {color:var(--primary-color);}
 ul.tier1 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier1 li a:hover { color:var(--hover-color); }
 ul.tier1 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier1 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier2 li {
 	font-family: 'Amatic SC', serif;
@@ -144,6 +147,8 @@ ul.tier2 li a:visited {color:var(--primary-color);}
 ul.tier2 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier2 li a:hover { color:var(--hover-color); }
 ul.tier2 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier2 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier3 li {
 	font-family: 'Amatic SC', serif;
@@ -158,6 +163,8 @@ ul.tier3 li a:visited {color:var(--primary-color);}
 ul.tier3 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier3 li a:hover { color:var(--hover-color); }
 ul.tier3 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier3 li a:focus { outline-color: var(--hover-color); }
+
 
 ul.tier4 li {
 	font-family: 'Amatic SC', sans-serif;
@@ -172,6 +179,8 @@ ul.tier4 li a:visited {color:var(--primary-color);}
 ul.tier4 li:nth-child(odd) a:visited { color:var(--secondary-color); }
 ul.tier4 li a:hover { color:var(--hover-color); }
 ul.tier4 li:nth-child(odd) a:hover { color:var(--hover-color); }
+ul.tier4 li a:focus { outline-color: var(--hover-color); }
+
 
 /* general styles */
 
@@ -227,4 +236,39 @@ td > input {
 	.col-xs-3 {
 		padding: 0 5px;
 	}
+}
+
+/* schedule styles */
+a.list-group-item-info, button.list-group-item-info, h2.workshops {
+	color: var(--secondary-color);
+	background-color: #4D4D4D;
+}
+a.list-group-item-info:hover, a.list-group-item-info:focus, h3.workshops {
+	color: #4D4D4D;
+	background-color: var(--secondary-color);
+}
+
+.label-primary {
+	background-color: var(--primary-color);
+}
+
+.label-info {
+    background-color: #743502;
+}
+
+.btn-info {
+	background-color: var(--active-navbar-color);
+	border-color: var(--active-navbar-color);
+	color : #4D4D4D;
+}
+
+.btn-info:hover, .btn-info:focus {
+    color: white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* workshops styles */
+h3.workshops{
+	margin-top: 0;
 }
